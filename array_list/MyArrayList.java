@@ -21,7 +21,7 @@ public class MyArrayList {
     for (int i = pos; i < this.size-1; i++) { this.items[i] = this.items[i + 1]; }
     this.size--;
   }
-  
+
   public void display() {
     for (int i = 0; i < this.size; i++) {
       System.out.print(this.items[i] + " ");
@@ -32,20 +32,20 @@ public class MyArrayList {
   public static void main(String[] args) {
     MyArrayList list = new MyArrayList();
     list.add(12);
-    // list.add(7);
-    // list.add(4);
-    // list.add(23);
-    // list.add(76);
-    // list.add(6);
-    // list.add(22);
-    // list.add(85);
-    // list.add(30);
-    // list.add(25);
-    // list.add(18);
-    // list.add(20);
-    // list.display();
-    // list.remove(6);
-    // list.display();
+    list.add(7);
+    list.add(4);
+    list.add(23);
+    list.add(76);
+    list.add(6);
+    list.add(22);
+    list.add(85);
+    list.add(30);
+    list.add(25);
+    list.add(18);
+    list.add(20);
+    list.display();
+    list.remove(6);
+    list.display();
     list.remove(0);
     list.display();
     list.add(18);
