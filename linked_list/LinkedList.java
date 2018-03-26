@@ -16,6 +16,10 @@ public class LinkedList {
   }
 
   public void prepend(int data) {
+    if (this.head == null) {
+      this.head = new Node(data);
+      return;
+    }
     Node new_head = new Node(data);
     new_head.next = this.head;
     this.head = new_head;
@@ -44,6 +48,17 @@ public class LinkedList {
     System.out.println();
   }
 
+  public LinkedList reverse() {
+    Node current = this.head;
+    LinkedList reversed = new LinkedList();
+    while (current != null) {
+      reversed.prepend(current.data);
+      current = current.next;
+    }
+
+    return reversed;
+  }
+
   public static void main(String[] args) {
     LinkedList list = new LinkedList(12);
     list.push_back(15);
@@ -60,5 +75,8 @@ public class LinkedList {
     System.out.println("DELETING VALUE 12");
     list.delete(12);
     list.display();
+
+    LinkedList reversed = list.reverse();
+    reversed.display();
   }
 }
