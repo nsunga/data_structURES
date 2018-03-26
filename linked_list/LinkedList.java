@@ -74,6 +74,18 @@ public class LinkedList {
     this.head = prev;
   }
 
+  public void reverse_recursion(Node curr, Node prev) {
+    if (curr.next == null) {
+      this.head = curr;
+      curr.next = prev;
+      return;
+    }
+
+    Node next = null;
+    next = curr.next;
+    curr.next = prev;
+    reverse_recursion(next, curr);
+  }
   public static void main(String[] args) {
     LinkedList list = new LinkedList(12);
     list.push_back(15);
@@ -94,6 +106,8 @@ public class LinkedList {
     LinkedList reversed = list.reverse();
     reversed.display();
     reversed.reverse_this();
+    reversed.display();
+    reversed.reverse_recursion(reversed.head, null);
     reversed.display();
   }
 }
