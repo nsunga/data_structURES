@@ -59,6 +59,21 @@ public class LinkedList {
     return reversed;
   }
 
+  public void reverse_this() {
+    Node prev = null;
+    Node current = this.head;
+    Node next = null;
+
+    while (current != null) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+
+    this.head = prev;
+  }
+
   public static void main(String[] args) {
     LinkedList list = new LinkedList(12);
     list.push_back(15);
@@ -77,6 +92,8 @@ public class LinkedList {
     list.display();
 
     LinkedList reversed = list.reverse();
+    reversed.display();
+    reversed.reverse_this();
     reversed.display();
   }
 }
